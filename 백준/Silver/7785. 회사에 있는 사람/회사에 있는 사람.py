@@ -8,8 +8,8 @@ for i in range(n):
     if log == "enter":
         h[name] = 1
     else:
-        del h[name]
-sorted_h = sorted(h.keys(), reverse=True)
-# print(sorted_h)
-for i in range(len(sorted_h)):
-    print(sorted_h[i])    
+        if h[name]:
+            del h[name]
+
+for i in sorted(h, reverse=True):
+    print(i) 
