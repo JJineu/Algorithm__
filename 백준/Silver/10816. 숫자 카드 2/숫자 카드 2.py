@@ -2,12 +2,12 @@ import sys
 input = sys.stdin.readline
 from collections import Counter
 
+n = input()
+card = input().strip().split()
+m = input()
+get_card = input().strip().split()
 
-n = int(input())
-card = list(map(int, input().strip().split()))
-m = int(input())
-get_card = list(map(int, input().strip().split()))
-
+# print(card)
 s = Counter(card)
 # print(s)
 answer = []
@@ -17,3 +17,5 @@ for i in get_card:
     else:
         answer.append(0)
 print(" ".join(list(map(str, answer))))
+
+        
