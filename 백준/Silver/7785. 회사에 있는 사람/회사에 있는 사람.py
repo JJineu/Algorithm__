@@ -1,3 +1,6 @@
+from sys import stdin
+input = stdin.readline
+
 n = int(input())
 h = {}
 for i in range(n):
