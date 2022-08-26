@@ -1,0 +1,35 @@
+# def solution(s):
+#     answer = 0
+#     # 앞 뒤 포인터써서 같은 문자인지 확인
+#     # 중간에 달라지면 다시
+#     # 같은 인덱스까지 왔을때 (홀수) -> return
+#     # 뒤 포인터부터 전부탐색
+#     # 앞 포인터 한칸씩 전진
+#     front, back = 0, n-1
+#     n = len(s)
+    
+#     for i in range(n):
+#         tmp = n-i
+#         if s[i] == s[tmp]:
+#             while front > back:
+#                 if s[front] == s[back]:
+#                     front += 1
+#                     back += -1
+#                 else:
+#                     break
+#         else:
+                    
+#     return answer
+
+def solution(s):
+    answer = 1
+    l = len(s)
+ 
+    for start in range(l):
+        for end in range(start + 2, l + 1):
+            a = s[start:end]
+            if len(a) < answer:
+                continue
+            if a == a[::-1]:
+                answer = max(answer, end - start)
+    return answer
