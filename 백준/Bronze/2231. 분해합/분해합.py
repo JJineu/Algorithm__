@@ -2,25 +2,18 @@ import sys
 input = sys.stdin.readline
 
 def main():
-    n = input()
-    l = len(n)
-    n = int(n)
 
-    start = n - 9*l
+    N = int(input())
+    answer = 0
+    start = N - 9*len(str(N))
     if start < 0:
-        start = 0
-        
-    start = 0
-    for num in range(start, n+1):
-        sum_num = num
-        num = str(num)
-        for i in num:
-            sum_num += int(i)
-        if sum_num == n:
-            print(num)
-            return
-    
-    print(0)
-
+        start = 1
+    for i in range(start, N+1):
+        nums = list(map(int, list(str(i))))
+        # print(nums)
+        if i + sum(nums) == N:
+            answer = i
+            break
+    print(answer)
 
 main()
