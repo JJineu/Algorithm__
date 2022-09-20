@@ -5,8 +5,13 @@ def main():
     n = input()
     l = len(n)
     n = int(n)
-    
-    for num in range(n+1):
+
+    start = n - 9*l
+    if start < 0:
+        start = 0
+        
+    start = 0
+    for num in range(start, n+1):
         sum_num = num
         num = str(num)
         for i in num:
